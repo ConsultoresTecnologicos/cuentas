@@ -1,0 +1,17 @@
+;;extensions to ignore
+*.log
+*.pot
+*.pyc
+.vscode
+*~
+\.DS_Store
+
+\.idea/
+
+\.env/
+
+\.coverage
+
+test_report/
+
+\.coveragerc
