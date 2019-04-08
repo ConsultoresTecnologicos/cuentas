@@ -15,3 +15,5 @@
 test_report/
 
 \.coveragerc
+
+db.sqlite3
