@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     "rest_framework",
     "django_extensions",
+    "djmoney",
 
     "users.apps.UsersConfig",
     "accounts.apps.AccountsConfig"
