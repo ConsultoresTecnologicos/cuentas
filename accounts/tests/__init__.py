@@ -1,0 +1,3 @@
+from .test_AccountsViewSet import AccountsViewSetTest
+
+AccountsViewSetTest
