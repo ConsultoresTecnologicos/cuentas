@@ -10,3 +10,4 @@ class AccountsViewSet(
 ):
     queryset = Accounts.objects.all()
     serializer_class = AccountsSerializer
+    lookup_field = "slug"

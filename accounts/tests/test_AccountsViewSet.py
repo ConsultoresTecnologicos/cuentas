@@ -31,3 +31,17 @@ class AccountsViewSetTest(APITestCase):
             self.assertListEqual(
                 sorted(account.keys()), sorted(self.return_fields)
             )
+
+    def test_retrieve_account(self):
+        """
+        Test get single account from API
+        """
+        account = AccountsFactory.create()
+        url_detail = reverse("accounts-detail", args=(account.slug,))
+        response = self.client.get(url_detail)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.assertListEqual(
+            sorted(response.data.keys()), sorted(self.return_fields)
+        )
