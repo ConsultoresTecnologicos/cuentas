@@ -13,7 +13,7 @@ class AccountsSerializer(serializers.HyperlinkedModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
         account = Accounts.objects.create(
-            user=user, 
+            user=user,
             **validated_data
         )
         return account
