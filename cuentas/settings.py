@@ -37,13 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
+    "oauth2_provider",
     "rest_framework",
     "django_extensions",
     "djmoney",
-
     "users.apps.UsersConfig",
-    "accounts.apps.AccountsConfig"
+    "accounts.apps.AccountsConfig",
 ]
 
 AUTH_USER_MODEL = "users.User"
@@ -95,20 +94,26 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": ("django.contrib.auth.password_validation."
-                 "UserAttributeSimilarityValidator")
+        "NAME": (
+            "django.contrib.auth.password_validation."
+            "UserAttributeSimilarityValidator"
+        )
     },
     {
-        "NAME": ("django.contrib.auth.password_validation."
-                 "MinimumLengthValidator")
+        "NAME": (
+            "django.contrib.auth.password_validation." "MinimumLengthValidator"
+        )
     },
     {
-        "NAME": ("django.contrib.auth.password_validation."
-                 "CommonPasswordValidator")
+        "NAME": (
+            "django.contrib.auth.password_validation." "CommonPasswordValidator"
+        )
     },
     {
-        "NAME": ("django.contrib.auth.password_validation."
-                 "NumericPasswordValidator")
+        "NAME": (
+            "django.contrib.auth.password_validation."
+            "NumericPasswordValidator"
+        )
     },
 ]
 
@@ -131,3 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/static/"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticated",
+    ),
+}
